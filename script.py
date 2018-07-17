@@ -43,7 +43,6 @@ class FormatIndex(object):
     def align_text(self):
         input_text = open("input.txt").read()
         formatted_text = re.sub(r'\n\s*\n','\n', input_text, re.MULTILINE).strip()
-        # this has to be refactored
         lines = formatted_text.splitlines()
         for line in lines:
             line = line.strip()
