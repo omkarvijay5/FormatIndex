@@ -2,6 +2,7 @@
 
 import re
 from collections import defaultdict
+import fileinput
 
 
 class FormatIndex(object):
@@ -41,10 +42,7 @@ class FormatIndex(object):
 
 
     def align_text(self):
-        input_text = open("input.txt").read()
-        formatted_text = re.sub(r'\n\s*\n','\n', input_text, re.MULTILINE).strip()
-        lines = formatted_text.splitlines()
-        for line in lines:
+        for line in fileinput.input():
             line = line.strip()
             if line:
                 stars = re.search("\**", line).group()
