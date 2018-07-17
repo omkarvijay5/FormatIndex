@@ -66,6 +66,7 @@ class FormatIndex(object):
                         print line
                 else:
                     self.nested_indices.append(line)
+        self.write_nested_indexes()
 
 
 def main():
